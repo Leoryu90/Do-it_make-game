@@ -1,10 +1,11 @@
+
 asciiMin = 32
 asciiMax = 126
 
 key = 3141592
 key = str(key)
 
-message = input("암호화할 메시지를 입력하세요 : ")
+message = input("복호화할 글자를 입력하세요 : ")
 
 messEncr = ""
 
@@ -13,9 +14,9 @@ for index in range(0, len(message)):
     if char < asciiMin or char > asciiMax:
         messEncr += message[index]
     else:
-        ascNum = char + int(key[index % len(key)])
-        if ascNum > asciiMax:
-            ascNum -= (asciiMax - asciiMin)
+        ascNum = char - int(key[index % len(key)])
+        if ascNum < asciiMin:
+            ascNum += (asciiMax - asciiMin)
         
         messEncr = messEncr + chr(ascNum)
 
