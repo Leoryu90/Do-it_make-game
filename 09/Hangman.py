@@ -8,7 +8,7 @@ livesUsed = 0       # 시도 횟수
 guessedLetters = [] # 사용자 추측 문자를 저장할 리스트
 
 # 게임 단어 리스트
-gameWords = ["anvil", "boutique"]
+gameWords = ["anvil", "boutique","cookie", "fluff", "jazz", "pneumonia"]
 
 # 게임에 사용할 단어 고르기
 gameWord = random.choice(gameWords)
@@ -35,8 +35,9 @@ while gameWord != displayWord and livesUsed < maxLives:
         #출력하기
         print("시도한 문자:", youTried)
     # 남은 시도 횟수 출력하기
-    print(maxLives - livesUsed, "번 남았습니다.\n\n")   #빈줄 추가 다르게 진행
-    
+    print(maxLives - livesUsed, "번 남았습니다.") 
+    # 보기 좋게 빈줄 추가
+    print()
     # 추측문자 입력받기
     currGuess = input("추측 문자:").strip().lower()
     # 1글자만 입력받기
@@ -71,9 +72,9 @@ while gameWord != displayWord and livesUsed < maxLives:
             print("올바른 추측입니다.")
         else:
             # 정답이 아니라면
-            print("들렸습니다.")
-        # 시도 횟수 1회 늘리기
-        livesUsed =+ 1
+            print("틀렸습니다.")
+            # 시도 횟수 1회 늘리기
+            livesUsed =+ 1
         
     # 보기 좋게 빈칸 출력하기
     print()
