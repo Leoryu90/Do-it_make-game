@@ -74,7 +74,7 @@ while gameWord != displayWord and livesUsed < maxLives:
             # 정답이 아니라면
             print("틀렸습니다.")
             # 시도 횟수 1회 늘리기
-            livesUsed =+ 1
+            livesUsed += 1
         
     # 보기 좋게 빈칸 출력하기
     print()
