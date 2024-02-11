@@ -41,6 +41,11 @@ while gameWord != displayWord and livesUsed < maxLives:
     # 추측문자 입력받기
     currGuess = input("추측 문자:").strip().lower()
     
+    currGuess = ""
+    
+    while len(currGuess) != 1:
+        currGuess = input("아무것도 입력하지 않았습니다.\n추측 문자:").strip().lower()
+    
     # 1글자만 입력받기
     if len(currGuess) > 1:
         currGuess = currGuess[0]
